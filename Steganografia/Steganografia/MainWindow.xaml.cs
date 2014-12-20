@@ -73,7 +73,7 @@ namespace Steganografia
                 Sciezka_obrazu.Text = selectedFileName;
                 BitmapImage bitmap = new BitmapImage();
 
-                img.Save(Sciezka_obrazu.Text);
+                img.Save(Sciezka_obrazu.Text, System.Drawing.Imaging.ImageFormat.Bmp);
 
                 bitmap.BeginInit();
                 bitmap.UriSource = new Uri(selectedFileName);
