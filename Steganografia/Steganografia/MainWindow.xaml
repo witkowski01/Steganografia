@@ -7,18 +7,22 @@
         <TabControl HorizontalAlignment="Left" Height="613" VerticalAlignment="Top" Width="892">
             <TabItem Header="Program">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-381,-297">
-                    <Button Content="Kodowanie" HorizontalAlignment="Left" Margin="59,169,0,0" VerticalAlignment="Top" Width="75" Click="Kodowanie_click"/>
-                    <Button Content="Odkodowanie" HorizontalAlignment="Left" Margin="59,194,0,0" VerticalAlignment="Top" Width="75" Click="Odkodowanie_click"/>
+                    <Button Content="Kodowanie" HorizontalAlignment="Left" Margin="92,548,0,0" VerticalAlignment="Top" Width="75" Click="Kodowanie_click"/>
+                    <Button Content="Odkodowanie" HorizontalAlignment="Left" Margin="222,548,0,0" VerticalAlignment="Top" Width="96" Click="Odkodowanie_click"/>
                     <Button Content="Wczytaj obraz" HorizontalAlignment="Left" Margin="59,108,0,0" VerticalAlignment="Top" Width="75" Click="Wczytaj_obraz" RenderTransformOrigin="0.28,-2.35"/>
-                   
+
                     <Image Name="Obraz" Height="400" Width="400" Margin="411,44,456,438" />
-                    <TextBox Name="TextBoxmassage" HorizontalAlignment="Left" Height="23" Margin="122,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="Sciezka_obrazu" HorizontalAlignment="Left" Height="23" Margin="164,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Name="TextBoxmassage" HorizontalAlignment="Left" Height="239" Margin="59,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" RenderTransformOrigin="0.478,0.138"/>
+                    <TextBox x:Name="Sciezka_obrazu" HorizontalAlignment="Left" Height="30" Margin="59,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="59,161,0,0" TextWrapping="Wrap" Text="Ścieżka pliku:" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="59,262,0,0" TextWrapping="Wrap" Text="Tekst do kodowania/odkodowany" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Pomoc">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock HorizontalAlignment="Left" Margin="59,161,0,0" TextWrapping="Wrap" Text="TAK JEST TU PUSTO NA CHWILĘ OBECNĄ" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938"/>
+                </Grid>
             </TabItem>
         </TabControl>
 

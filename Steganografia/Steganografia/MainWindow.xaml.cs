@@ -38,7 +38,7 @@ namespace Steganografia
         {
             //encryption();
             Bitmap img = new Bitmap(Sciezka_obrazu.Text);
-
+            TextBoxmassage.Text = RemoveAccent(TextBoxmassage.Text);
             for (int i = 0; i < img.Width; i++)
             {
                 for (int j = 0; j < img.Height; j++)
@@ -140,6 +140,15 @@ namespace Steganografia
                 Obraz.Source = bitmap;
             }
             
+        }
+
+        public string RemoveAccent(string txt)
+        {
+
+            byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
+
+            return System.Text.Encoding.ASCII.GetString(bytes);
+
         }
     }
 }
