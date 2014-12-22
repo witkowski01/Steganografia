@@ -147,5 +147,17 @@ namespace Steganografia
             byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(txt);
             return System.Text.Encoding.ASCII.GetString(bytes);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) // wczytaj
+        {
+            var wczyt = new Wczytaj();
+            //takie coś działa
+            TextBoxmassage.Text = wczyt.odczyt_zawartosci();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) // zapisz
+        {
+            var save = new Zapisz(TextBoxmassage.Text);
+        }
     }
 }
