@@ -33,12 +33,172 @@ namespace Steganografia
             
         }
 
+        private int zamiana_na_pseudopolskie(int wejsciowy)
+        {
+            if (wejsciowy > 255)
+            {
+                int wyjscie=0;
+                if (wejsciowy == 260)  //Ą
+                {
+                    wyjscie = 0;
+                }
+                else if (wejsciowy == 261)  //ą
+                {
+                    wyjscie = 2;
+                }
+                else if (wejsciowy == 262)  //ć duże
+                {
+                    wyjscie = 3;
+                }
+                else if (wejsciowy == 263)  //ć
+                {
+                    wyjscie = 4;
+                }
+                else if (wejsciowy == 280)  //Ę
+                {
+                    wyjscie = 5;
+                }
+                else if (wejsciowy == 281)  //ę
+                {
+                    wyjscie = 6;
+                }
+                else if (wejsciowy == 321)  //Ł
+                {
+                    wyjscie = 7;
+                }
+                else if (wejsciowy == 322)  //ł
+                {
+                    wyjscie = 8;
+                }
+                else if (wejsciowy == 323)  //Ń
+                {
+                    wyjscie = 9;
+                }
+                else if (wejsciowy == 324)  //ń
+                {
+                    wyjscie = 10;
+                }
+                else if (wejsciowy == 346)  //Ś
+                {
+                    wyjscie = 11;
+                }
+                else if (wejsciowy == 347)  //ś
+                {
+                    wyjscie = 12;
+                }
+                else if (wejsciowy == 377)  //Ź
+                {
+                    wyjscie = 13;
+                }
+                else if (wejsciowy == 378)  //ź
+                {
+                    wyjscie = 14;
+                }
+                else if (wejsciowy == 379)  //Ż
+                {
+                    wyjscie = 15;
+                }
+                else if (wejsciowy == 380)  //ż
+                {
+                    wyjscie = 16;
+                }
+
+                return wyjscie;
+            }
+            else
+            {
+                return wejsciowy;
+            }
+
+        }
+
+        private int zamiana_na_polskiezpseudo(int wejsciowy)
+        {
+            if (wejsciowy < 17)
+            {
+                int wyjscie = 0;
+
+                if (wejsciowy == 0)  //Ą
+                {
+                    wyjscie = 260;
+                }
+                else if (wejsciowy == 2)  //ą
+                {
+                    wyjscie = 261;
+                }
+                else if (wejsciowy == 3)  //ć duże
+                {
+                    wyjscie = 262;
+                }
+                else if (wejsciowy == 4)  //ć
+                {
+                    wyjscie = 263;
+                }
+                else if (wejsciowy == 5)  //Ę
+                {
+                    wyjscie = 280;
+                }
+                else if (wejsciowy == 6)  //ę
+                {
+                    wyjscie = 281;
+                }
+                else if (wejsciowy == 7)  //Ł
+                {
+                    wyjscie = 321;
+                }
+                else if (wejsciowy == 8)  //ł
+                {
+                    wyjscie = 322;
+                }
+                else if (wejsciowy == 9)  //Ń
+                {
+                    wyjscie = 323;
+                }
+                else if (wejsciowy == 10)  //ń
+                {
+                    wyjscie = 324;
+                }
+                else if (wejsciowy == 11)  //Ś
+                {
+                    wyjscie = 346;
+                }
+                else if (wejsciowy == 12)  //ś
+                {
+                    wyjscie = 347;
+                }
+                else if (wejsciowy == 13)  //Ź
+                {
+                    wyjscie = 377;
+                }
+                else if (wejsciowy == 14)  //ź
+                {
+                    wyjscie = 378;
+                }
+                else if (wejsciowy == 15)  //Ż
+                {
+                    wyjscie = 379;
+                }
+                else if (wejsciowy == 16)  //ż
+                {
+                    wyjscie = 380;
+                }
+
+                return wyjscie;
+            }
+            else
+            {
+                return wejsciowy;
+            }
+
+        }
+
+
         #region Kodowanie click
         private void Kodowanie_click(object sender, RoutedEventArgs e)
         {
             //encryption();
             Bitmap img = new Bitmap(Sciezka_obrazu.Text);
-            TextBoxmassage.Text = RemoveAccent(TextBoxmassage.Text);
+            //TextBoxmassage.Text = RemoveAccent(TextBoxmassage.Text);
             for (int i = 0; i < img.Width; i++)
             {
                 for (int j = 0; j < img.Height; j++)
@@ -51,7 +211,10 @@ namespace Steganografia
                         Console.WriteLine("B = [" + i + "][" + j + "] =" + pixel.B);
                         char letter = TextBoxmassage.Text[j];
                         //var letter = Convert.ToChar((TextBoxmassage.Text.Substring(j, i)));
-                        int value = Convert.ToInt32((letter));
+                        int value1 = Convert.ToInt32((letter));
+                        
+                        int value = zamiana_na_pseudopolskie(value1);
+
                         Console.WriteLine("letter :" + letter + " value: " + value);
 
                         img.SetPixel(i,j,Color.FromArgb(pixel.R,pixel.G, value));
@@ -106,11 +269,13 @@ namespace Steganografia
                         Console.WriteLine("G = [" + i + "][" + j + "] =" + pixel.G);
                         Console.WriteLine("B = [" + i + "][" + j + "] =" + pixel.B);
 
-                        int value = pixel.B;
+                        int value1 = pixel.B;
+                        int value = zamiana_na_polskiezpseudo(value1);
                         char c = Convert.ToChar(value);
-                        string letter = System.Text.Encoding.ASCII.GetString(new byte[] {Convert.ToByte(c)});
+                        
+                        //string letter = System.Text.Encoding.ASCII.GetString(new byte[] {Convert.ToByte(c)});
 
-                        massage = massage + letter;
+                        massage = massage + c;
                         
                     }
                 }

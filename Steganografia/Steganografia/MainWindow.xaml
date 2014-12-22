@@ -6,25 +6,39 @@
 
         <TabControl HorizontalAlignment="Left" Height="613" VerticalAlignment="Top" Width="892">
             <TabItem Header="Program">
-                <Grid Background="#FFE5E5E5" Margin="0,2,-9,-11">
+                <Grid Background="#FFE5E5E5" Margin="0,-2,-15,-24">
                     <Button Content="Kodowanie" HorizontalAlignment="Left" Margin="59,527,0,0" VerticalAlignment="Top" Width="75" Click="Kodowanie_click"/>
                     <Button Content="Odkodowanie" HorizontalAlignment="Left" Margin="163,527,0,0" VerticalAlignment="Top" Width="96" Click="Odkodowanie_click"/>
-                    <Button Content="Wczytaj obraz" HorizontalAlignment="Left" Margin="59,108,0,0" VerticalAlignment="Top" Width="75" Click="Wczytaj_obraz" RenderTransformOrigin="0.28,-2.35"/>
+                    <Button Content="Wczytaj obraz" HorizontalAlignment="Left" Margin="59,108,0,0" VerticalAlignment="Top" Width="113" Click="Wczytaj_obraz" RenderTransformOrigin="0.28,-2.35"/>
 
 
                     <TextBox Name="TextBoxmassage" HorizontalAlignment="Left" Height="239" Margin="59,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" RenderTransformOrigin="0.478,0.138"/>
                     <TextBox x:Name="Sciezka_obrazu" HorizontalAlignment="Left" Height="30" Margin="59,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="59,161,0,0" TextWrapping="Wrap" Text="Ścieżka pliku:" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="59,262,0,0" TextWrapping="Wrap" Text="Tekst do kodowania/odkodowany" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="59,161,0,0" TextWrapping="Wrap" Text="Ścieżka pliku:" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938" FontSize="14" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="36,260,0,0" TextWrapping="Wrap" Text="Tekst do kodowania/odkodowany" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938" FontWeight="Bold" FontSize="14"/>
                     <Button Content="Wczytaj text" HorizontalAlignment="Left" Margin="272,260,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
                     <Button Content="Zapisz text" HorizontalAlignment="Left" Margin="273,527,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="196,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Obrazek wczytany"/><Run Text=" "/><Run Text="/ zapisany"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="196,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"><Run Text="Obrazek wczytany"/><Run Text=" "/><Run Text="/ zapisany"/><LineBreak/><Run/></TextBlock>
                     <Image Name="Obraz" Margin="411,44,62,148" />
+                    <TextBlock HorizontalAlignment="Left" Margin="736,534,0,0" TextWrapping="Wrap" Text="Autor : witkowski01" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
+
             <TabItem Header="Pomoc">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-8,-7">
+                    <TextBlock HorizontalAlignment="Left" Margin="77,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938" FontSize="16" Height="70" Width="440"><Run Text="Modyfikacja algorytmu polega na zapisie w ostatnim pikselu obrazu informacji ile pikseli zostało wykorzystanych."/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="77,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="320" Width="516" FontSize="14"><Run Text="Wykorzystano algorytm najmniej znaczacego bitu"/><LineBreak/><Run/><LineBreak/><Run Text="Zakodowanie polega na:"/><LineBreak/><Run Text="1"/><Run Text=". Rozlożeniu tekstu na bity"/><LineBreak/><Run Text="2. Rozłorzenie obrazu na  pixele"/><Run Text=","/><Run Text=" a te na wartośći R,G,B"/><LineBreak/><Run Text="3. "/><Run Text="Wpisywanie do ostatnich bitów kolorów"/><Run Text=","/><Run Text=" bitu tekstu"/><LineBreak/><Run Text="4"/><Run Text=". "/><Run Text="Na koniec, "/><Run Text="złożenie pikseli w obrazek"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="Dekodowanie polegało na:"/><LineBreak/><Run Text="1. Rozłożeniu obrazu na piksele, następnie na kolory R, G, B"/><LineBreak/><Run Text="2. "/><Run Text="Pobieraniu wartości  kolorów"/><LineBreak/><Run Text="3. "/><Run Text="Sumowaniu bitów i przekształcaniu ich na znaki "/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="77,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"><Run Background="#FF00E29A" Text="POMOC - jak to działa:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="506,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="321" Width="378" FontSize="14"><Run Background="#FF00E29A" FontWeight="Bold" FontSize="22" Text="Jak obsługiwać program:"/><LineBreak/><Run FontWeight="Bold" Text="Kodowanie"/><LineBreak/><Run Text="1. Należy wczytać odpowiedni obraz w formacie BMP"/><LineBreak/><Run Text="2. Należy Wprowadzić lub wczytać tekst."/><LineBreak/><Run Text="3. Można przystąpić do kodowania."/><LineBreak/><Run Text="4. Wynik można zapisać do pliku tekstowego, lub skopiować z pola tekstowego."/><LineBreak/><Run/><LineBreak/><Run FontWeight="Bold" FontSize="16" Text="Dekodowanie:"/><LineBreak/><Run Text="1. Wczytać odpowiedni obrazek zakodowany wczesniej."/><LineBreak/><Run Text="2. Przystapić do dekodowania."/><LineBreak/><Run Text="3. Podobnie jak przy kodowaniu można zapisać wynik do pliku tekstowego lub skopiwoać go z pola tekstowego"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="741,528,0,0" TextWrapping="Wrap" Text="Autor : witkowski01" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Autor">
                 <Grid Background="#FFE5E5E5">
-                    <TextBlock HorizontalAlignment="Left" Margin="59,161,0,0" TextWrapping="Wrap" Text="TAK JEST TU PUSTO NA CHWILĘ OBECNĄ" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="269,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.407,0.938" Height="79" Width="327" FontSize="20"><Run Text="&#x9;             "/><Run Text="Autor"/><Run Text=":"/><LineBreak/><Run Text="&#x9;"/><Run Text=" "/><Run Text="   "/><Run Text="Konrad Witkowski"/><LineBreak/><Run Text="   &#x9;         witkowski01"/></TextBlock>
+                    <Image Margin="279,39,273,123" Source="Image5.png" Stretch="Fill"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="731,533,0,0" TextWrapping="Wrap" Text="Autor : witkowski01" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>
