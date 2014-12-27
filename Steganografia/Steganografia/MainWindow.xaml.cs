@@ -198,7 +198,14 @@ namespace Steganografia
         {
             //encryption();
             Bitmap img = new Bitmap(Sciezka_obrazu.Text);
-            //TextBoxmassage.Text = RemoveAccent(TextBoxmassage.Text);
+            int wielkosc = img.Height*img.Width;
+            if (TextBoxmassage.Text.Length>wielkosc)
+            {
+                MessageBox.Show("Tekst jest za duży dla tego obrazka, zmień wiadomość albo obrazek.");
+            }
+            else
+            {
+           //TextBoxmassage.Text = RemoveAccent(TextBoxmassage.Text);
             for (int i = 0; i < img.Width; i++)
             {
                 for (int j = 0; j < img.Height; j++)
@@ -244,6 +251,8 @@ namespace Steganografia
                 Obraz.Source = bitmap;
             }
         }
+        }
+
 
         #endregion
 
